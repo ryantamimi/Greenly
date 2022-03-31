@@ -94,7 +94,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                       30, 10, 0, 0),
                                   child: AuthUserStreamWidget(
                                     child: Text(
-                                      currentUserDocument?.fullName,
+                                      currentUserDisplayName,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1
                                           .override(
