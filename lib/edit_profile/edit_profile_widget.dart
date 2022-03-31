@@ -30,6 +30,13 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
+  void initState() {
+    super.initState();
+    textController1 = TextEditingController(text: currentUserDisplayName);
+    textController2 = TextEditingController(text: currentUserEmail);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return StreamBuilder<List<UsersRecord>>(
       stream: queryUsersRecord(
@@ -133,57 +140,54 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     16, 16, 16, 0),
-                                child: TextFormField(
-                                  controller: textController1 ??=
-                                      TextEditingController(
-                                    text: editProfileUsersRecord.displayName,
-                                  ),
-                                  obscureText: false,
-                                  decoration: InputDecoration(
-                                    labelText: 'Full Name',
-                                    hintText: 'Your email...',
-                                    hintStyle: FlutterFlowTheme.of(context)
-                                        .bodyText1
-                                        .override(
-                                          fontFamily: 'Lexend Deca',
-                                          color: Color(0x9AFFFFFF),
+                                child: AuthUserStreamWidget(
+                                  child: TextFormField(
+                                    controller: textController1,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      labelText: 'Full Name',
+                                      hintText: 'Your email...',
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                            fontFamily: 'Lexend Deca',
+                                            color: Color(0x9AFFFFFF),
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .darkBG,
+                                          width: 1,
                                         ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color:
-                                            FlutterFlowTheme.of(context).darkBG,
-                                        width: 1,
+                                        borderRadius: BorderRadius.circular(8),
                                       ),
-                                      borderRadius: BorderRadius.circular(8),
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color:
-                                            FlutterFlowTheme.of(context).darkBG,
-                                        width: 1,
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .darkBG,
+                                          width: 1,
+                                        ),
+                                        borderRadius: BorderRadius.circular(8),
                                       ),
-                                      borderRadius: BorderRadius.circular(8),
+                                      filled: true,
+                                      fillColor:
+                                          FlutterFlowTheme.of(context).darkBG,
+                                      prefixIcon: Icon(
+                                        Icons.person_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .tertiaryColor,
+                                      ),
                                     ),
-                                    filled: true,
-                                    fillColor:
-                                        FlutterFlowTheme.of(context).darkBG,
-                                    prefixIcon: Icon(
-                                      Icons.person_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .tertiaryColor,
-                                    ),
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyText1,
                                   ),
-                                  style: FlutterFlowTheme.of(context).bodyText1,
                                 ),
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     16, 16, 16, 0),
                                 child: TextFormField(
-                                  controller: textController2 ??=
-                                      TextEditingController(
-                                    text: editProfileUsersRecord.email,
-                                  ),
+                                  controller: textController2,
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     labelText: 'Email Address',
@@ -246,9 +250,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
 
                                           final usersUpdateData =
                                               createUsersRecordData(
-                                            displayName:
-                                                textController1?.text ?? '',
-                                            email: textController2?.text ?? '',
+                                            displayName: textController1.text,
+                                            email: textController2.text,
                                           );
                                           await editProfileUsersRecord.reference
                                               .update(usersUpdateData);

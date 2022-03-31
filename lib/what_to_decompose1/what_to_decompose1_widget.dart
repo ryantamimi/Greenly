@@ -188,7 +188,7 @@ class _WhatToDecompose1WidgetState extends State<WhatToDecompose1Widget> {
                                       children: [
                                         Expanded(
                                           child: Text(
-                                            'any type of fruits or vegetables are decomposable.',
+                                            'any type of fruits or vegetables are compstable.',
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .subtitle2

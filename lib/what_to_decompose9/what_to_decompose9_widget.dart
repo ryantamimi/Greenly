@@ -192,7 +192,7 @@ class _WhatToDecompose9WidgetState extends State<WhatToDecompose9Widget> {
                                       children: [
                                         Expanded(
                                           child: Text(
-                                            'Sawdust and Wood chips can be decomposed too. ',
+                                            'Sawdust and Wood chips can be compstable too. ',
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .subtitle2

@@ -1,3 +1,5 @@
+import '../backend/backend.dart';
+import '../components/station_widget.dart';
 import '../flutter_flow/flutter_flow_google_map.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -14,12 +16,32 @@ class MyTasksWidget extends StatefulWidget {
 }
 
 class _MyTasksWidgetState extends State<MyTasksWidget> {
+  LatLng currentUserLocationValue;
+  final scaffoldKey = GlobalKey<ScaffoldState>();
   LatLng googleMapsCenter;
   Completer<GoogleMapController> googleMapsController;
-  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    getCurrentUserLocation(defaultLocation: LatLng(0.0, 0.0), cached: true)
+        .then((loc) => setState(() => currentUserLocationValue = loc));
+  }
 
   @override
   Widget build(BuildContext context) {
+    if (currentUserLocationValue == null) {
+      return Center(
+        child: SizedBox(
+          width: 50,
+          height: 50,
+          child: SpinKitChasingDots(
+            color: FlutterFlowTheme.of(context).primaryColor,
+            size: 50,
+          ),
+        ),
+      );
+    }
     return Scaffold(
       key: scaffoldKey,
       resizeToAvoidBottomInset: false,
@@ -43,22 +65,64 @@ class _MyTasksWidgetState extends State<MyTasksWidget> {
       ),
       backgroundColor: FlutterFlowTheme.of(context).darkBG,
       body: SafeArea(
-        child: FlutterFlowGoogleMap(
-          controller: googleMapsController,
-          onCameraIdle: (latLng) => googleMapsCenter = latLng,
-          initialLocation: googleMapsCenter ??= LatLng(13.106061, -59.613158),
-          markerColor: GoogleMarkerColor.violet,
-          mapType: MapType.normal,
-          style: GoogleMapStyle.night,
-          initialZoom: 14,
-          allowInteraction: true,
-          allowZoom: true,
-          showZoomControls: true,
-          showLocation: true,
-          showCompass: false,
-          showMapToolbar: false,
-          showTraffic: false,
-          centerMapOnMarkerTap: true,
+        child: StreamBuilder<List<MarkersRecord>>(
+          stream: queryMarkersRecord(),
+          builder: (context, snapshot) {
+            // Customize what your widget looks like when it's loading.
+            if (!snapshot.hasData) {
+              return Center(
+                child: SizedBox(
+                  width: 50,
+                  height: 50,
+                  child: SpinKitChasingDots(
+                    color: FlutterFlowTheme.of(context).primaryColor,
+                    size: 50,
+                  ),
+                ),
+              );
+            }
+            List<MarkersRecord> googleMapMarkersRecordList = snapshot.data;
+            return FlutterFlowGoogleMap(
+              controller: googleMapsController,
+              onCameraIdle: (latLng) => googleMapsCenter = latLng,
+              initialLocation: googleMapsCenter ??= currentUserLocationValue,
+              markers: (googleMapMarkersRecordList ?? [])
+                  .map(
+                    (googleMapMarkersRecord) => FlutterFlowMarker(
+                      googleMapMarkersRecord.reference.path,
+                      googleMapMarkersRecord.location,
+                      () async {
+                        await showModalBottomSheet(
+                          isScrollControlled: true,
+                          backgroundColor: Colors.transparent,
+                          context: context,
+                          builder: (context) {
+                            return Padding(
+                              padding: MediaQuery.of(context).viewInsets,
+                              child: StationWidget(
+                                station: googleMapMarkersRecord,
+                              ),
+                            );
+                          },
+                        );
+                      },
+                    ),
+                  )
+                  .toList(),
+              markerColor: GoogleMarkerColor.violet,
+              mapType: MapType.normal,
+              style: GoogleMapStyle.night,
+              initialZoom: 14,
+              allowInteraction: true,
+              allowZoom: true,
+              showZoomControls: true,
+              showLocation: true,
+              showCompass: false,
+              showMapToolbar: false,
+              showTraffic: false,
+              centerMapOnMarkerTap: true,
+            );
+          },
         ),
       ),
     );

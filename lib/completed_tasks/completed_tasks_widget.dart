@@ -1,3 +1,5 @@
+import '../auth/auth_util.dart';
+import '../completed_tasks_copy/completed_tasks_copy_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -76,348 +78,423 @@ class _CompletedTasksWidgetState extends State<CompletedTasksWidget> {
       body: SafeArea(
         child: Stack(
           children: [
-            Align(
-              alignment: AlignmentDirectional(0, 0),
-              child: Stack(
-                children: [
-                  Align(
-                    alignment: AlignmentDirectional(0, 0.34),
-                    child: Image.asset(
-                      'assets/images/Untitled-1.png',
-                      width: 500,
-                      height: 500,
-                      fit: BoxFit.cover,
-                    ),
+            Stack(
+              children: [
+                Align(
+                  alignment: AlignmentDirectional(0, 0),
+                  child: Stack(
+                    children: [
+                      Align(
+                        alignment: AlignmentDirectional(-0.82, -0.36),
+                        child: Text(
+                          'Smartwatch',
+                          style: FlutterFlowTheme.of(context).bodyText1,
+                        ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(0.01, -0.36),
+                        child: Text(
+                          'Smarphone',
+                          style: FlutterFlowTheme.of(context).bodyText1,
+                        ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(0.74, -0.36),
+                        child: Text(
+                          'Tablet',
+                          style: FlutterFlowTheme.of(context).bodyText1,
+                        ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(0.78, 0.21),
+                        child: Text(
+                          'Tulips Pot',
+                          style: FlutterFlowTheme.of(context).bodyText1,
+                        ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(-0.69, 0.2),
+                        child: Text(
+                          'Pot',
+                          style: FlutterFlowTheme.of(context).bodyText1,
+                        ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(0, 0.13),
+                        child: Image.asset(
+                          'assets/images/Untitled-1.png',
+                          width: 500,
+                          height: 500,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(0, 0.21),
+                        child: Text(
+                          'Tomato plant',
+                          style: FlutterFlowTheme.of(context).bodyText1,
+                        ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(-0.85, 0.8),
+                        child: Text(
+                          'Compost Bag',
+                          style: FlutterFlowTheme.of(context).bodyText1,
+                        ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(0, 0.81),
+                        child: Text(
+                          'Houseplant',
+                          style: FlutterFlowTheme.of(context).bodyText1,
+                        ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(0.85, 0.81),
+                        child: Text(
+                          'Fruit Basket',
+                          style: FlutterFlowTheme.of(context).bodyText1,
+                        ),
+                      ),
+                    ],
                   ),
-                  Align(
-                    alignment: AlignmentDirectional(-0.82, -0.36),
-                    child: Text(
-                      'Smartwatch',
-                      style: FlutterFlowTheme.of(context).bodyText1,
-                    ),
-                  ),
-                  Align(
-                    alignment: AlignmentDirectional(0.01, -0.36),
-                    child: Text(
-                      'Smarphone',
-                      style: FlutterFlowTheme.of(context).bodyText1,
-                    ),
-                  ),
-                  Align(
-                    alignment: AlignmentDirectional(0.74, -0.36),
-                    child: Text(
-                      'Tablet',
-                      style: FlutterFlowTheme.of(context).bodyText1,
-                    ),
-                  ),
-                  Align(
-                    alignment: AlignmentDirectional(0.78, 0.21),
-                    child: Text(
-                      'Tulips Pot',
-                      style: FlutterFlowTheme.of(context).bodyText1,
-                    ),
-                  ),
-                  Align(
-                    alignment: AlignmentDirectional(-0.69, 0.2),
-                    child: Text(
-                      'Pot',
-                      style: FlutterFlowTheme.of(context).bodyText1,
-                    ),
-                  ),
-                  Align(
-                    alignment: AlignmentDirectional(0, 0.21),
-                    child: Text(
-                      'Tomato plant',
-                      style: FlutterFlowTheme.of(context).bodyText1,
-                    ),
-                  ),
-                  Align(
-                    alignment: AlignmentDirectional(-0.85, 0.8),
-                    child: Text(
-                      'Compost Bag',
-                      style: FlutterFlowTheme.of(context).bodyText1,
-                    ),
-                  ),
-                  Align(
-                    alignment: AlignmentDirectional(0, 0.81),
-                    child: Text(
-                      'Houseplant',
-                      style: FlutterFlowTheme.of(context).bodyText1,
-                    ),
-                  ),
-                  Align(
-                    alignment: AlignmentDirectional(0.85, 0.81),
-                    child: Text(
-                      'Fruit Basket',
-                      style: FlutterFlowTheme.of(context).bodyText1,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Align(
-              alignment: AlignmentDirectional(0, 0),
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 450),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    SingleChildScrollView(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Row(
+                ),
+                Align(
+                  alignment: AlignmentDirectional(0, 0),
+                  child: Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 450),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SingleChildScrollView(
+                          child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              Container(
-                                width: 375,
-                                height: 50,
-                                decoration: BoxDecoration(
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryColor,
-                                  borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(45),
-                                    bottomRight: Radius.circular(0),
-                                    topLeft: Radius.circular(0),
-                                    topRight: Radius.circular(0),
-                                  ),
-                                ),
-                                child: Stack(
-                                  children: [
-                                    Align(
-                                      alignment:
-                                          AlignmentDirectional(0.8, -0.3),
-                                      child: Text(
-                                        '1000 Points',
-                                        textAlign: TextAlign.center,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                              fontFamily: 'Lexend Deca',
-                                              fontSize: 30,
-                                              fontWeight: FontWeight.w300,
-                                            ),
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Container(
+                                    width: 375,
+                                    height: 50,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryColor,
+                                      borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(45),
+                                        bottomRight: Radius.circular(0),
+                                        topLeft: Radius.circular(0),
+                                        topRight: Radius.circular(0),
                                       ),
                                     ),
-                                  ],
-                                ),
+                                    child: Stack(
+                                      children: [
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(0.86, -0.61),
+                                          child: AuthUserStreamWidget(
+                                            child: Text(
+                                              valueOrDefault<String>(
+                                                currentUserDocument?.points
+                                                    .toString(),
+                                                '0',
+                                              ),
+                                              textAlign: TextAlign.center,
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyText1
+                                                  .override(
+                                                    fontFamily: 'Lexend Deca',
+                                                    fontSize: 30,
+                                                    fontWeight: FontWeight.w300,
+                                                  ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
-              ),
+                Align(
+                  alignment: AlignmentDirectional(0.85, -0.28),
+                  child: FFButtonWidget(
+                    onPressed: () async {
+                      await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CompletedTasksCopyWidget(),
+                        ),
+                      );
+                    },
+                    text: '60,000',
+                    options: FFButtonOptions(
+                      width: 90,
+                      height: 30,
+                      color: FlutterFlowTheme.of(context).primaryColor,
+                      textStyle:
+                          FlutterFlowTheme.of(context).subtitle2.override(
+                                fontFamily: 'Lexend Deca',
+                                color: Colors.white,
+                              ),
+                      borderSide: BorderSide(
+                        color: Colors.transparent,
+                        width: 1,
+                      ),
+                      borderRadius: 12,
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: AlignmentDirectional(0.01, -0.28),
+                  child: FFButtonWidget(
+                    onPressed: () async {
+                      await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CompletedTasksCopyWidget(),
+                        ),
+                      );
+                    },
+                    text: '100,000',
+                    options: FFButtonOptions(
+                      width: 90,
+                      height: 30,
+                      color: FlutterFlowTheme.of(context).primaryColor,
+                      textStyle:
+                          FlutterFlowTheme.of(context).subtitle2.override(
+                                fontFamily: 'Lexend Deca',
+                                color: Colors.white,
+                              ),
+                      borderSide: BorderSide(
+                        color: Colors.transparent,
+                        width: 1,
+                      ),
+                      borderRadius: 12,
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: AlignmentDirectional(-0.85, -0.27),
+                  child: FFButtonWidget(
+                    onPressed: () async {
+                      await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CompletedTasksCopyWidget(),
+                        ),
+                      );
+                    },
+                    text: '30,000',
+                    options: FFButtonOptions(
+                      width: 90,
+                      height: 30,
+                      color: FlutterFlowTheme.of(context).primaryColor,
+                      textStyle:
+                          FlutterFlowTheme.of(context).subtitle2.override(
+                                fontFamily: 'Lexend Deca',
+                                color: Colors.white,
+                              ),
+                      borderSide: BorderSide(
+                        color: Colors.transparent,
+                        width: 1,
+                      ),
+                      borderRadius: 12,
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: AlignmentDirectional(-0.85, 0.3),
+                  child: FFButtonWidget(
+                    onPressed: () async {
+                      await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CompletedTasksCopyWidget(),
+                        ),
+                      );
+                    },
+                    text: '1,000',
+                    options: FFButtonOptions(
+                      width: 90,
+                      height: 30,
+                      color: FlutterFlowTheme.of(context).primaryColor,
+                      textStyle:
+                          FlutterFlowTheme.of(context).subtitle2.override(
+                                fontFamily: 'Lexend Deca',
+                                color: Colors.white,
+                              ),
+                      borderSide: BorderSide(
+                        color: Colors.transparent,
+                        width: 1,
+                      ),
+                      borderRadius: 12,
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: AlignmentDirectional(-0.01, 0.31),
+                  child: FFButtonWidget(
+                    onPressed: () async {
+                      await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CompletedTasksCopyWidget(),
+                        ),
+                      );
+                    },
+                    text: '2,500',
+                    options: FFButtonOptions(
+                      width: 90,
+                      height: 30,
+                      color: FlutterFlowTheme.of(context).primaryColor,
+                      textStyle:
+                          FlutterFlowTheme.of(context).subtitle2.override(
+                                fontFamily: 'Lexend Deca',
+                                color: Colors.white,
+                              ),
+                      borderSide: BorderSide(
+                        color: Colors.transparent,
+                        width: 1,
+                      ),
+                      borderRadius: 12,
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: AlignmentDirectional(0.85, 0.31),
+                  child: FFButtonWidget(
+                    onPressed: () async {
+                      await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CompletedTasksCopyWidget(),
+                        ),
+                      );
+                    },
+                    text: '2,500',
+                    options: FFButtonOptions(
+                      width: 90,
+                      height: 30,
+                      color: FlutterFlowTheme.of(context).primaryColor,
+                      textStyle:
+                          FlutterFlowTheme.of(context).subtitle2.override(
+                                fontFamily: 'Lexend Deca',
+                                color: Colors.white,
+                              ),
+                      borderSide: BorderSide(
+                        color: Colors.transparent,
+                        width: 1,
+                      ),
+                      borderRadius: 12,
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: AlignmentDirectional(-0.84, 0.93),
+                  child: FFButtonWidget(
+                    onPressed: () async {
+                      await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CompletedTasksCopyWidget(),
+                        ),
+                      );
+                    },
+                    text: '1,000',
+                    options: FFButtonOptions(
+                      width: 90,
+                      height: 30,
+                      color: FlutterFlowTheme.of(context).primaryColor,
+                      textStyle:
+                          FlutterFlowTheme.of(context).subtitle2.override(
+                                fontFamily: 'Lexend Deca',
+                                color: Colors.white,
+                              ),
+                      borderSide: BorderSide(
+                        color: Colors.transparent,
+                        width: 1,
+                      ),
+                      borderRadius: 12,
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: AlignmentDirectional(0, 0.93),
+                  child: FFButtonWidget(
+                    onPressed: () async {
+                      await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CompletedTasksCopyWidget(),
+                        ),
+                      );
+                    },
+                    text: '3,000',
+                    options: FFButtonOptions(
+                      width: 90,
+                      height: 30,
+                      color: FlutterFlowTheme.of(context).primaryColor,
+                      textStyle:
+                          FlutterFlowTheme.of(context).subtitle2.override(
+                                fontFamily: 'Lexend Deca',
+                                color: Colors.white,
+                              ),
+                      borderSide: BorderSide(
+                        color: Colors.transparent,
+                        width: 1,
+                      ),
+                      borderRadius: 12,
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: AlignmentDirectional(0.85, 0.93),
+                  child: FFButtonWidget(
+                    onPressed: () async {
+                      await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CompletedTasksCopyWidget(),
+                        ),
+                      );
+                    },
+                    text: '500',
+                    options: FFButtonOptions(
+                      width: 90,
+                      height: 30,
+                      color: FlutterFlowTheme.of(context).primaryColor,
+                      textStyle:
+                          FlutterFlowTheme.of(context).subtitle2.override(
+                                fontFamily: 'Lexend Deca',
+                                color: Colors.white,
+                              ),
+                      borderSide: BorderSide(
+                        color: Colors.transparent,
+                        width: 1,
+                      ),
+                      borderRadius: 12,
+                    ),
+                  ),
+                ),
+              ],
             ),
             Align(
-              alignment: AlignmentDirectional(0.85, -0.28),
-              child: FFButtonWidget(
-                onPressed: () {
-                  print('Button pressed ...');
-                },
-                text: '60,000',
-                options: FFButtonOptions(
-                  width: 90,
-                  height: 30,
-                  color: FlutterFlowTheme.of(context).primaryColor,
-                  textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                        fontFamily: 'Lexend Deca',
-                        color: Colors.white,
-                      ),
-                  borderSide: BorderSide(
-                    color: Colors.transparent,
-                    width: 1,
-                  ),
-                  borderRadius: 12,
-                ),
-              ),
-            ),
-            Align(
-              alignment: AlignmentDirectional(0.01, -0.28),
-              child: FFButtonWidget(
-                onPressed: () {
-                  print('Button pressed ...');
-                },
-                text: '100,000',
-                options: FFButtonOptions(
-                  width: 90,
-                  height: 30,
-                  color: FlutterFlowTheme.of(context).primaryColor,
-                  textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                        fontFamily: 'Lexend Deca',
-                        color: Colors.white,
-                      ),
-                  borderSide: BorderSide(
-                    color: Colors.transparent,
-                    width: 1,
-                  ),
-                  borderRadius: 12,
-                ),
-              ),
-            ),
-            Align(
-              alignment: AlignmentDirectional(-0.85, -0.27),
-              child: FFButtonWidget(
-                onPressed: () async {
-                  Navigator.pop(context);
-                },
-                text: '30,000',
-                options: FFButtonOptions(
-                  width: 90,
-                  height: 30,
-                  color: FlutterFlowTheme.of(context).primaryColor,
-                  textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                        fontFamily: 'Lexend Deca',
-                        color: Colors.white,
-                      ),
-                  borderSide: BorderSide(
-                    color: Colors.transparent,
-                    width: 1,
-                  ),
-                  borderRadius: 12,
-                ),
-              ),
-            ),
-            Align(
-              alignment: AlignmentDirectional(-0.85, 0.3),
-              child: FFButtonWidget(
-                onPressed: () {
-                  print('Button pressed ...');
-                },
-                text: '1,000',
-                options: FFButtonOptions(
-                  width: 90,
-                  height: 30,
-                  color: FlutterFlowTheme.of(context).primaryColor,
-                  textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                        fontFamily: 'Lexend Deca',
-                        color: Colors.white,
-                      ),
-                  borderSide: BorderSide(
-                    color: Colors.transparent,
-                    width: 1,
-                  ),
-                  borderRadius: 12,
-                ),
-              ),
-            ),
-            Align(
-              alignment: AlignmentDirectional(-0.01, 0.31),
-              child: FFButtonWidget(
-                onPressed: () {
-                  print('Button pressed ...');
-                },
-                text: '2,500',
-                options: FFButtonOptions(
-                  width: 90,
-                  height: 30,
-                  color: FlutterFlowTheme.of(context).primaryColor,
-                  textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                        fontFamily: 'Lexend Deca',
-                        color: Colors.white,
-                      ),
-                  borderSide: BorderSide(
-                    color: Colors.transparent,
-                    width: 1,
-                  ),
-                  borderRadius: 12,
-                ),
-              ),
-            ),
-            Align(
-              alignment: AlignmentDirectional(0.85, 0.31),
-              child: FFButtonWidget(
-                onPressed: () {
-                  print('Button pressed ...');
-                },
-                text: '2,500',
-                options: FFButtonOptions(
-                  width: 90,
-                  height: 30,
-                  color: FlutterFlowTheme.of(context).primaryColor,
-                  textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                        fontFamily: 'Lexend Deca',
-                        color: Colors.white,
-                      ),
-                  borderSide: BorderSide(
-                    color: Colors.transparent,
-                    width: 1,
-                  ),
-                  borderRadius: 12,
-                ),
-              ),
-            ),
-            Align(
-              alignment: AlignmentDirectional(-0.84, 0.93),
-              child: FFButtonWidget(
-                onPressed: () {
-                  print('Button pressed ...');
-                },
-                text: '1,000',
-                options: FFButtonOptions(
-                  width: 90,
-                  height: 30,
-                  color: FlutterFlowTheme.of(context).primaryColor,
-                  textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                        fontFamily: 'Lexend Deca',
-                        color: Colors.white,
-                      ),
-                  borderSide: BorderSide(
-                    color: Colors.transparent,
-                    width: 1,
-                  ),
-                  borderRadius: 12,
-                ),
-              ),
-            ),
-            Align(
-              alignment: AlignmentDirectional(0, 0.93),
-              child: FFButtonWidget(
-                onPressed: () {
-                  print('Button pressed ...');
-                },
-                text: '3,000',
-                options: FFButtonOptions(
-                  width: 90,
-                  height: 30,
-                  color: FlutterFlowTheme.of(context).primaryColor,
-                  textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                        fontFamily: 'Lexend Deca',
-                        color: Colors.white,
-                      ),
-                  borderSide: BorderSide(
-                    color: Colors.transparent,
-                    width: 1,
-                  ),
-                  borderRadius: 12,
-                ),
-              ),
-            ),
-            Align(
-              alignment: AlignmentDirectional(0.85, 0.93),
-              child: FFButtonWidget(
-                onPressed: () {
-                  print('Button pressed ...');
-                },
-                text: '500',
-                options: FFButtonOptions(
-                  width: 90,
-                  height: 30,
-                  color: FlutterFlowTheme.of(context).primaryColor,
-                  textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                        fontFamily: 'Lexend Deca',
-                        color: Colors.white,
-                      ),
-                  borderSide: BorderSide(
-                    color: Colors.transparent,
-                    width: 1,
-                  ),
-                  borderRadius: 12,
-                ),
+              alignment: AlignmentDirectional(0.05, -0.99),
+              child: Text(
+                'Points:',
+                style: FlutterFlowTheme.of(context).bodyText1.override(
+                      fontFamily: 'Lexend Deca',
+                      fontSize: 30,
+                    ),
               ),
             ),
           ],

@@ -125,6 +125,7 @@ class _RegisterWidgetState extends State<RegisterWidget>
 
                               final usersCreateData = createUsersRecordData(
                                 displayName: fullNameController.text,
+                                points: 10000,
                               );
                               await UsersRecord.collection
                                   .doc(user.uid)
@@ -195,6 +196,7 @@ class _RegisterWidgetState extends State<RegisterWidget>
 
                                 final usersCreateData = createUsersRecordData(
                                   displayName: fullNameController.text,
+                                  points: 10000,
                                 );
                                 await UsersRecord.collection
                                     .doc(user.uid)
@@ -266,6 +268,7 @@ class _RegisterWidgetState extends State<RegisterWidget>
 
                                 final usersCreateData = createUsersRecordData(
                                   displayName: fullNameController.text,
+                                  points: 10000,
                                 );
                                 await UsersRecord.collection
                                     .doc(user.uid)
@@ -349,6 +352,7 @@ class _RegisterWidgetState extends State<RegisterWidget>
 
                                 final usersCreateData = createUsersRecordData(
                                   displayName: fullNameController.text,
+                                  points: 10000,
                                 );
                                 await UsersRecord.collection
                                     .doc(user.uid)
@@ -432,6 +436,7 @@ class _RegisterWidgetState extends State<RegisterWidget>
 
                                 final usersCreateData = createUsersRecordData(
                                   displayName: fullNameController.text,
+                                  points: 10000,
                                 );
                                 await UsersRecord.collection
                                     .doc(user.uid)

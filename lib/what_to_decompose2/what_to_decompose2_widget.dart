@@ -196,7 +196,7 @@ class _WhatToDecompose2WidgetState extends State<WhatToDecompose2Widget> {
                                       children: [
                                         Expanded(
                                           child: Text(
-                                            'Eggshell can be decomposed easil',
+                                            'Eggshell can be compstable easily.',
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .subtitle2

@@ -192,7 +192,7 @@ class _WhatToDecompose7WidgetState extends State<WhatToDecompose7Widget> {
                                       children: [
                                         Expanded(
                                           child: Text(
-                                            'Grass clippings and leaves are decomposable.',
+                                            'Grass clippings and leaves are compstable.',
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .subtitle2

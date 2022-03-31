@@ -186,7 +186,7 @@ class _WhatToDecompose3WidgetState extends State<WhatToDecompose3Widget> {
                                       children: [
                                         Expanded(
                                           child: Text(
-                                            'Coffee Lovers ! Coffee grounds and filters are decomposable.',
+                                            'Coffee Lovers ! Coffee grounds and filters are compstable.',
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .subtitle2
