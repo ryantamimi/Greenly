@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "959428529308",
+    "project_id": "greenly-b5ebf",
+    "storage_bucket": "greenly-b5ebf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959428529308:android:60c9810fe3b55f8722f159",
+        "android_client_info": {
+          "package_name": "com.flutterflow.greenly2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "959428529308-22g0qbibfcpcatp4iae9ukeql4auc5ii.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flutterflow.greenly2",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "959428529308-02jo9vbth7iffod4b0eggpiaiug5ciiu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABfR1O-od_NkR61oyfFHzr-W8dSu1KRN0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "959428529308-02jo9vbth7iffod4b0eggpiaiug5ciiu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "959428529308-74lvie020koikrttf1d499mq992bo1i1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flutterflow.greenly2"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
